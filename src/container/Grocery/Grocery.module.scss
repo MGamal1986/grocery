@@ -1,0 +1,66 @@
+@import "../../styles/colors";
+@import "../../styles/margins.module";
+.Grocery {
+    background: #fff;
+    max-width: 500px;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    .Form {
+        margin-bottom: $mBetweenSection;
+        .Input {
+            flex-basis: 80%;
+            input {
+                border-radius: 5px 0 0 5px;
+                &::-webkit-input-placeholder {
+                    color: rgba($fontColor, 0.45);
+                }
+                &::-moz-placeholder {
+                    color: rgba($fontColor, 0.45);
+                }
+                &:-ms-input-placeholder {
+                    color: rgba($fontColor, 0.45);
+                }
+                &::-ms-input-placeholder {
+                    color: rgba($fontColor, 0.45);
+                }
+                &::placeholder {
+                    color: rgba($fontColor, 0.45);
+                }
+                &:active,
+                &:focus {
+                    outline: none !important;
+                    box-shadow: none !important;
+                }
+            }
+        }
+        .Button {
+            flex-basis: 20%;
+            align-self: normal;
+            background: $btnColor;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            color: $fontColor;
+            &:active,
+            &:focus {
+                outline: none !important;
+                box-shadow: none !important;
+                border: none !important;
+                background: $btnColor !important;
+                color: $fontColor !important;
+            }
+        }
+    }
+    form {
+        width: 100%;
+    }
+    h1 {
+        width: 100%;
+    }
+    & > div {
+        width: 100%;
+    }
+}

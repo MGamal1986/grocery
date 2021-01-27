@@ -1,0 +1,7 @@
+@import "../../styles/margins.module";
+.Button {
+    color: red;
+    margin-top: $mBetweenSection;
+    cursor: pointer;
+    text-transform: capitalize;
+}

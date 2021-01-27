@@ -1,0 +1,11 @@
+@import "../../styles/colors";
+@import "../../styles/margins.module";
+
+.Title {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: $fontColor;
+    margin-bottom: $mBetweenSection;
+}

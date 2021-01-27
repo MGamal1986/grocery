@@ -1,0 +1,36 @@
+.Item {
+    text-transform: capitalize;
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 0.25rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .Icon {
+        font-size: 0.8rem;
+        cursor: pointer;
+        span:first-child {
+            svg {
+                color: green;
+            }
+            margin-right: 0.25rem;
+        }
+        span:last-child {
+            svg {
+                color: red;
+            }
+        }
+    }
+    transition: background 0.5s ease-in-out;
+    &:hover {
+        background: rgba(0, 0, 0, 0.07);
+    }
+    &.Selected {
+        background: rgba(0, 0, 0, 0.07);
+    }
+    &::focus {
+        background: rgba(0, 0, 0, 0.07);
+    }
+}

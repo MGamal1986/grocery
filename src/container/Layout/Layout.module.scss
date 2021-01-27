@@ -1,0 +1,8 @@
+@import "../../styles/colors";
+.Layout {
+    min-height: 100vh;
+    background: $bgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
