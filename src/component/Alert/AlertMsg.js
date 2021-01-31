@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Alert } from "react-bootstrap";
-import IsDidMountEffect from "../../hooks/IsDidMountEffect";
 import classes from "./AlertMsg.module.scss";
 function AlertMsg({ msg, variant, items }) {
     const [alert, setAlert] = useState(false);
-
-    // use custom hook that prevent useEffect Initail render
-    IsDidMountEffect(() => {
-        setAlert(true);
-        let timer = setTimeout(() => {
-            setAlert(false);
-        }, 800);
+    // try to prevent initial firing of callback function in useEffect
+    const isMounted = useRef(false);
+    const timer = useRef(null);
+    useEffect(() => {
+        if (isMounted.current) {
+            setAlert(true);
+            timer.current = setTimeout(() => {
+                setAlert(false);
+            }, 1000);
+        } else {
+            isMounted.current = true;
+        }
+        // invoke before second render to clear any subscribtion of th previous render
         return () => {
-            clearTimeout(timer);
+            clearTimeout(timer.current);
         };
-    }, items);
+    }, [items]);
 
     return (
         <>

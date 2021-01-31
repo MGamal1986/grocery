@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./Item.module.scss";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 function Item({ title, ed, del, item }) {
-    console.log("item.js .. render");
     let attchedCLass = [classes.Item, item.edit ? classes.Selected : null].join(" ");
     return (
         <li className={attchedCLass}>

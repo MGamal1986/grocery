@@ -43,21 +43,18 @@ function Grocery(props) {
     // at any update we modify localStorage with new list
     useEffect(() => {
         localStorage.setItem("list", JSON.stringify(list.items));
-        console.log("list item update");
     }, [list.items]);
 
     // add new item to list  or edit item
     const addList = (item, editable = false) => {
         // add new item in the list
         if (item !== "" && editable === false && edit === false) {
-            console.log("add new item");
             let newItem = { id: uniqid(), title: value };
             let newList = [newItem, ...list.items];
             setList({ items: newList, alertMsg: "item is added", variant: "success" });
             setValue("");
             // add empty item
         } else if (item === "") {
-            console.log("input field is empty");
             setList({
                 items: [...list.items],
                 alertMsg: "please enter the value",
@@ -65,7 +62,6 @@ function Grocery(props) {
             });
             // check if this calling is editing or not
         } else if (edit === false && editable === true) {
-            console.log("we will eidt");
             setEdit(true);
             // catch item that we want to edit
             setEditItem(item);
@@ -116,7 +112,6 @@ function Grocery(props) {
         setValue(e.target.value);
     };
 
-    console.log("grocery.js -- render");
     return (
         <Container>
             <Row>

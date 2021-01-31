@@ -2,7 +2,6 @@ import React from "react";
 import classes from "./Items.module.scss";
 import Item from "./item/Item";
 function Items({ list, remove, edit, select }) {
-    console.log("items.js .. render");
     return (
         <ul className={classes.Items}>
             {list.map((ls, i) => {
